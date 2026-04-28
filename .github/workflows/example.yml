@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Set Date
         run: echo "DATE=$(date "+%m/%d/%Y")" >> $GITHUB_ENV
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Generate new discussion
         id: create-discussion
         uses: step-security/create-discussion@v2 
