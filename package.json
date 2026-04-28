@@ -42,7 +42,7 @@
     "tempy": "^3.1.0",
     "ts-jest": "^29.2.6",
     "typescript": "^5.8.2",
-    "typescript-eslint": "^8.26.1"
+    "typescript-eslint": "^8.59.1"
   },
   "dependencies": {
     "@actions/core": "^1.11.1",
