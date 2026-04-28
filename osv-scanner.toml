@@ -1,0 +1,19 @@
+[[IgnoredVulns]]
+id = "GHSA-2mjp-6q6p-2qxm"
+reason = "undici is a transitive dependency of @actions/github. This action only makes direct API calls to api.github.com and does not follow redirects to untrusted origins. Not exploitable in this context."
+
+[[IgnoredVulns]]
+id = "GHSA-4992-7rv2-5pvq"
+reason = "undici is a transitive dependency of @actions/github. Content-type header handling issue is not exploitable as this action only makes GraphQL calls to GitHub API."
+
+[[IgnoredVulns]]
+id = "GHSA-g9mf-h72j-4rw9"
+reason = "undici is a transitive dependency of @actions/github. Cookie leaking on cross-origin redirects is not exploitable as this action only communicates with api.github.com."
+
+[[IgnoredVulns]]
+id = "GHSA-v9p9-hfj2-hcw8"
+reason = "undici is a transitive dependency of @actions/github. HTTP request smuggling is not exploitable as this action is an HTTP client making direct API calls, not a proxy or server."
+
+[[IgnoredVulns]]
+id = "GHSA-vrm6-8vpv-qv8q"
+reason = "undici is a transitive dependency of @actions/github. HTTP request smuggling is not exploitable as this action is an HTTP client making direct API calls, not a proxy or server."
