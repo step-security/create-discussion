@@ -11,12 +11,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@8d3c67de8e2fe68ef647c8db1e6a09f647780f40 # v2.19.0
+        with:
+          egress-policy: audit
+
       - name: Set Date
         run: echo "DATE=$(date "+%m/%d/%Y")" >> $GITHUB_ENV
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - name: Generate new discussion
         id: create-discussion
-        uses: step-security/create-discussion@v2 
+        uses: step-security/create-discussion@420fc06f04fd1a7984402b43b336650229dad5a4 # v2.1.0
         with:
           title: "New Discussion ${{ env.DATE }} in General"
           body: |
@@ -27,7 +32,7 @@ jobs:
 
       - name: Generate new discussion using file
         id: create-discussion-with-file
-        uses: step-security/create-discussion@v2   
+        uses: step-security/create-discussion@420fc06f04fd1a7984402b43b336650229dad5a4 # v2.1.0
         with:
           title: "New Discussion ${{ env.DATE }} in General using File"
           body-filepath: 'zen.txt'
@@ -37,7 +42,7 @@ jobs:
 
       - name: Generate new discussion using file through repository-name and category-name
         id: create-discussion-fetch-repo-id-and-category-id
-        uses: step-security/create-discussion@v2  
+        uses: step-security/create-discussion@420fc06f04fd1a7984402b43b336650229dad5a4 # v2.1.0
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}      
         with:
